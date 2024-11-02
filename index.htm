@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init();
+        });
+    </script>
+    <style>
+       /* Updated CSS */
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh; /* Ensure the body takes full height */
+    flex-wrap: wrap; /* Allow wrapping to create space for the footer */
+}
+
+/* Sticky Sidebar */
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 200px;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Sidebar background color */
+    color: #fff;
+    padding: 20px;
+    overflow-y: auto; /* Makes sidebar scrollable */
+    z-index: 1000;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 2rem; /* Font size for logo */
+    margin-bottom: 30px;
+}
+.sidebar ul{
+    list-style: none;
+    word-spacing: normal;
+}
+.sidebar a:hover{
+    color:blue ;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Ensure it stacks content vertically */
+    justify-content: space-between; /* Ensure footer is pushed to the bottom */
+}
+
+/* Hero section styles */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Full screen height */
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 20px;
+    gap: 50px; /* Space between text and image */
+    flex-wrap: wrap; /* Ensures content wraps on smaller screens */
+    text-align: center;
+    margin: 0;
+    border-radius: 20px;
+}
+
+.hero .text {
+    flex: 1 1 300px; /* Ensures text takes up space while being responsive */
+    font-size: 2rem; /* Increased font size */
+}
+
+.hero h1 {
+    font-size: 3.5rem; /* Increased heading font size */
+}
+
+.hero .typing {
+    font-size: 1.8rem; /* Increased font size for the animated text */
+}
+
+.socials {
+    margin-top: 20px; /* Space above the icons */
+}
+
+.socials a {
+    color: #fff; /* Icon color */
+    margin: 0 10px; /* Space between icons */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.5rem; /* Icon size */
+}
+
+.hero .image {
+    flex: 1 1 100px; /* Same for the image */
+}
+
+.hero img {
+    border-radius: 50%; /* Circular image */
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    padding-bottom: 20px;
+    width: 200px; /* Increased image size */
+    height: 200px; /* Increased image size */
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Hide sidebar on small screens */
+    }
+
+    .hero {
+        flex-direction: column; /* Stack the content vertically */
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Slightly reduce font size for mobile */
+    }
+
+    .hero .typing {
+        font-size: 1.5rem; /* Slightly reduce animated text font size for mobile */
+    }
+
+    .hero img {
+        width: 150px; /* Adjust image size for mobile */
+        height: 150px;
+    }
+}
+
+/* Skills Section Styles */
+.skills-section {
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for contrast */
+    text-align: center;
+    color: #0f2027;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between skill boxes */
+}
+
+.skill {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff; /* Text color */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for skill boxes */
+    flex: 1 1 300px; /* Ensures each skill box takes up equal space */
+    transition: transform 0.3s; /* Animation effect */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slide-up 0.5s forwards; /* Slide-up animation */
+}
+
+.skill:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.skill-image {
+    max-width: 100px; /* Set a max width for the images */
+    height: auto;
+    margin-bottom: 10px; /* Space between image and text */
+    border-radius: 10px; /* Rounded corners for skill images */
+}
+
+.sidebar img {
+    max-width: 100px; /* Set the maximum width of the image */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 50%; /* Optional: Make the image circular */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+h2 {
+    font-size: 2em; /* Adjust heading size */
+    margin-bottom: 20px;
+}
+
+/* Animation for skills */
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.section-form {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    color: #ececec;  
+    border-radius: 20px; 
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);   
+           
+   
+        }
+.contact{
+    flex-direction: column;
+    padding-left: 80px;
+}
+
+        .contact ul {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0; /* Remove default padding */
+        }
+
+        .contact li {
+            margin-bottom: 10px; /* Spacing between list items */
+            font-size: 16px; /* Font size for contact details */
+        }
+
+        .form {
+            padding: 20px; /* Reduced padding for form section */
+            flex: 1; /* Allowing equal space distribution */
+            min-width: 200px; /* Minimum width for smaller screens */
+            max-width: 300px; /* Optional max width */
+            padding-left: 80px;
+        }
+
+        .form input,
+        .form textarea {
+            width: 90%; /* Set width to 90% for a more compact look */
+            padding: 10px; /* Padding inside inputs */
+            margin-bottom: 10px; /* Spacing between inputs */
+            border: 1px solid #ccc; /* Border for inputs */
+            border-radius: 4px; /* Rounded corners for inputs */
+        }
+
+        .c-btn {
+            padding: 10px 20px; /* Padding for the submit button */
+            background-color: #007BFF; /* Button background color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            border-radius: 4px; /* Rounded corners for button */
+            cursor: pointer; /* Pointer cursor for button */
+        }
+
+        .c-btn:hover {
+            background-color: #0056b3; /* Button hover effect */
+        }
+        .contact-for h2{
+            align-items: center;
+            display: flex;
+             justify-content: center;
+             flex-wrap: wrap;
+              gap: 20px; /* Space between skill boxes */
+        }
+/* Footer styles */
+footer {
+    background-color: #203a43;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width:700px; /* Ensure footer takes full width */
+    border-radius: 20px;
+    padding-left: 30%;
+}
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>MW</h1>
+        <img src="images/res.jpg" alt="Mahlon Wanyonyi">
+        <h3>Mahlon Wanyonyi</h3>
+        <p>Designer and Data Analyst</p>
+        <p>email <a href="mahlihep@gmail.com">mahlihep@gmail.com</a></p>
+        <a href="https://twitter.com/lonpach7" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/lonpach7" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mahlon-wanyonyi-9326091b0/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <div>
+            <a href="resume.pdf" download>
+                <button class="c-btn h-btn" style="margin-top: 1rem; padding: 0.75rem 1.25rem; border-radius: 50px;">
+                    Resume
+                </button>
+            </a>
+            
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="hero">
+            <div class="text">
+                <h1 class="animated">I am Mahlon</h1>
+                <p class="typing"></p>
+                <div class="socials">
+                    <a href="https://twitter.com/lonpach7" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/lonpach7" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mahlon-wanyonyi-9326091b0/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="images/ano.png" alt="Mahlon Wanyonyi">
+            </div>
+        </div>
+        <section id="skills" class="skills-section">
+            <h2>My Expertise</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <img src="images/data.png" alt="Data Analysis" class="skill-image">
+                    <h3>Data Analysis</h3>
+                    <p>Experience with SQL, Python, and data visualization tools like Tableau and Power BI.</p>
+                </div>
+                <div class="skill">
+                    <img src="images/web.png" alt="Web Design" class="skill-image">
+                    <h3>Web Design</h3>
+                    <p>Proficient in UI/UX design using Figma, HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="skill">
+                    <img src="images/app.png" alt="App Development" class="skill-image">
+                    <h3>App Development</h3>
+                    <p>Building mobile applications using React Native with Expo and Android Studio.</p>
+                </div>
+                <div class="skill">
+                    <img src="images/app.png" alt="App Development" class="skill-image">
+                    <h3>App Development</h3>
+                    <p>Building mobile applications using React Native with Expo and Android Studio.</p>
+                </div>
+            </div>
+        </section>
+   
+    
+ <!-- contact section starts -->
+ <section class="contact-for" id="contact">
+    <h2>Get in Touch<h2>
+    <div class="section-form">
+        
+        <div class="contact">
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> Lower Kabete, Nairobi, Kenya</li>
+                <li><i class="fas fa-phone-alt"></i> +254 740 184 845</li>
+                <li><i class="fas fa-envelope"></i> mahlihep@gmail.com</li>
+                <li><i class="fas fa-globe"></i> loncoding.com</li>
+            </ul>
+        </div>
+    
+    <div class="form">
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="E-mail" />
+        <input type="text" placeholder="Mobile No." />
+        <textarea placeholder="Message" rows="5"></textarea>
+        <button class="c-btn">Submit</button>
+    </div>
+    </div>
+</section>
+<!-- contact section ends here -->
+
+
+    <footer>
+        <p>&copy; 2024 Mahlon Wanyonyi. All Rights Reserved.</p>
+    </footer>
+
+   <script>
+    const phrases = ["UI/UX Designer", "Data Analyst", "Web Developer"];
+    let currentPhrase = 0;
+    let currentChar = 0;
+    const typingElement = document.querySelector(".typing");
+
+    function type() {
+        if (currentChar < phrases[currentPhrase].length) {
+            typingElement.textContent += phrases[currentPhrase].charAt(currentChar);
+            currentChar++;
+            setTimeout(type, 150); // Adjust typing speed here
+        } else {
+            // Pause after the full phrase is typed out before clearing it
+            setTimeout(() => {
+                currentPhrase = (currentPhrase + 1) % phrases.length;
+                currentChar = 0;
+                typingElement.textContent = ""; // Clear the text for the next phrase
+                setTimeout(type, 500); // Small delay before typing the next phrase
+            }, 1500); // Delay after full phrase is typed
+        }
+    }
+
+    type(); // Start typing animation
+</script>
+
+    
+    </script>
+</body>
+</html>

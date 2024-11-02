@@ -1,0 +1,57 @@
+
+    .contact {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px; /* Increased gap for better spacing */
+        flex-wrap: wrap; /* Ensures responsiveness */
+        padding: 20px; /* Added padding to the contact section */
+    }
+
+    .getintouch {
+        flex: 1; /* Allowing equal space distribution */
+        max-width: 400px; /* Optional max width */
+    }
+
+    .heading {
+        font-size: 24px; /* Improved heading size */
+        margin-bottom: 10px; /* Spacing below heading */
+    }
+
+    .contact ul {
+        list-style-type: none; /* Remove default list styling */
+        padding: 0; /* Remove default padding */
+    }
+
+    .contact li {
+        margin-bottom: 10px; /* Spacing between list items */
+        font-size: 16px; /* Font size for contact details */
+    }
+
+    .form {
+        padding: 20px; /* Reduced padding for form section */
+        flex: 1; /* Allowing equal space distribution */
+        max-width: 400px; /* Optional max width */
+    }
+
+    .form input,
+    .form textarea {
+        width: 100%; /* Full width inputs */
+        padding: 10px; /* Padding inside inputs */
+        margin-bottom: 10px; /* Spacing between inputs */
+        border: 1px solid #ccc; /* Border for inputs */
+        border-radius: 4px; /* Rounded corners for inputs */
+    }
+
+    .c-btn {
+        padding: 10px 20px; /* Padding for the submit button */
+        background-color: #007BFF; /* Button background color */
+        color: white; /* Button text color */
+        border: none; /* No border */
+        border-radius: 4px; /* Rounded corners for button */
+        cursor: pointer; /* Pointer cursor for button */
+    }
+
+    .c-btn:hover {
+        background-color: #0056b3; /* Button hover effect */
+    }
+
